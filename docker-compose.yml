@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    command: sh -c "/wait && python -m app"
+    network_mode: host
+    ports:
+    - "3000:3000"
+    depends_on:
+      - pg
+    environment:
+      WAIT_HOSTS: localhost:5432
+  pg:
+    image: postgres
+    network_mode: host
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test_db
