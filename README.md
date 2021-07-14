@@ -31,8 +31,15 @@ http://127.0.0.1:3000
 http://127.0.0.1:3000/docs
 ```
 
-## Start BOT-API
+## BOT-API
+### Start
 
 ```
 python3 -m bot
+```
+
+### Config
+
+```
+config file: /bot/config/settings.ini
 ```
